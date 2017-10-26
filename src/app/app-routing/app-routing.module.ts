@@ -10,10 +10,10 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forRoot([
       { path: '', redirectTo: 'starter', pathMatch: 'full' },
-      { path: 'starter', component: StarterComponent },
+      { path: 'starter', component: StarterComponent }
     ])
   ],
   declarations: [],
-  exports: [ RouterModule]
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
