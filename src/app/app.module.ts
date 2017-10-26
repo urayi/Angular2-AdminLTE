@@ -17,6 +17,7 @@ import { AdminContentComponent } from './admin/admin-content/admin-content.compo
 import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
 import { AdminControlSidebarComponent } from './admin/admin-control-sidebar/admin-control-sidebar.component';
 import { AdminDashboard1Component } from './admin/admin-dashboard1/admin-dashboard1.component';
+import { TablesComponent } from './starter/starter-content/tables/tables.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdminDashboard1Component } from './admin/admin-dashboard1/admin-dashboa
     StarterLeftSideComponent,
     StarterContentComponent,
     StarterFooterComponent,
-    StarterControlSidebarComponent
+    StarterControlSidebarComponent,
+    TablesComponent
   ],
   imports: [
     BrowserModule,
