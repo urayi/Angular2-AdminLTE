@@ -18,6 +18,11 @@ import { AdminFooterComponent } from './admin/admin-footer/admin-footer.componen
 import { AdminControlSidebarComponent } from './admin/admin-control-sidebar/admin-control-sidebar.component';
 import { AdminDashboard1Component } from './admin/admin-dashboard1/admin-dashboard1.component';
 import { TablesComponent } from './starter/starter-content/tables/tables.component';
+import { ReportGeneratorComponent } from './starter/starter-content/report-generator/report-generator.component';
+import { StatusReportComponent } from './starter/starter-content/status-report/status-report.component';
+import { ReactivoGeneratorComponent } from './starter/starter-content/reactivo-generator/reactivo-generator.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { TablesComponent } from './starter/starter-content/tables/tables.compone
     StarterContentComponent,
     StarterFooterComponent,
     StarterControlSidebarComponent,
-    TablesComponent
+    TablesComponent,
+    ReportGeneratorComponent,
+    StatusReportComponent,
+    ReactivoGeneratorComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
