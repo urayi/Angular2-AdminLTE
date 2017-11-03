@@ -1,7 +1,7 @@
 {
-  "name": "angular-admin-lte",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "sparta-motor-gui",
+  "version": "0.0.1",
+  "license": "",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -35,7 +35,9 @@
     "bootstrap3-wysihtml5-bower": "^0.3.3",
     "core-js": "^2.4.1",
     "daterangepicker": "^2.1.25",
+    "flag-icon-css": "^2.8.0",
     "font-awesome": "^4.7.0",
+    "i18n": "^0.8.3",
     "icheck": "^1.0.2",
     "install": "^0.10.1",
     "ionicons": "^2.0.1",

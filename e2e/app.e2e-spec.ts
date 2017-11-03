@@ -1,14 +1,14 @@
-import { AngularAdminLTEPage } from './app.po';
+import { SpartaGuiPage } from './app.po';
 
-describe('angular-admin-lte App', () => {
-  let page: AngularAdminLTEPage;
+describe('Sparta GUI App', () => {
+  let page: SpartaGuiPage;
 
   beforeEach(() => {
-    page = new AngularAdminLTEPage();
+    page = new SpartaGuiPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Título subtítulo');
   });
 });

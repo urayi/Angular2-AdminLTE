@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class AngularAdminLTEPage {
+export class SpartaGuiPage {
   navigateTo() {
     return browser.get('/');
   }

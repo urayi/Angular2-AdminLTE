@@ -1,20 +1,20 @@
-$.widget.bridge('uibutton', $.ui.button);
+/*$.widget.bridge('uibutton', $.ui.button);
 
 //receive calls from typescript code to update the layouts
-var AdminLTE = (function() {
+var SpartaGui = (function() {
   return {
     init: function() {
       $(function(){
-        $.AdminLTE.layout.activate();
-        $.AdminLTE.layout.fix();
-        $.AdminLTE.layout.fixSidebar();
+        $.SpartaGui.layout.activate();
+        $.SpartaGui.layout.fix();
+        $.SpartaGui.layout.fixSidebar();
       });
     }
   }
-})(AdminLTE||{});
+})(SpartaGui||{});
 
-$(function () {
-  $('#example').DataTable({
+/*$(function () {
+  $('#TableReport').DataTable({
     'paging'      : true,
     'lengthChange': false,
     'searching'   : false,
@@ -22,5 +22,4 @@ $(function () {
     'info'        : true,
     'autoWidth'   : false
   })
-})
-
+})*/
