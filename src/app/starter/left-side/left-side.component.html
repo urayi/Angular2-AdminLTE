@@ -34,8 +34,8 @@
             </span>
           </a>
         <ul class="treeview-menu">
-          <li><a routerLink="/pricing" routerLinkActive="active"><i class="fa fa-usd"></i> <span>Pricing</span></a></li>
-          <li><a routerLink="/revenue" routerLinkActive="active"><i class="fa fa-money"></i> <span>Revenue</span></a></li>
+          <li><a routerLink="/pricing" routerLinkActive="active" (onclick)="setOwner('pricing')"><i class="fa fa-usd"></i><span>Pricing</span></a></li>
+          <li><a routerLink="/revenue" routerLinkActive="active" (onclick)="setOwner('revenue')"><i class="fa fa-money"></i><span>Revenue</span></a></li>
         </ul>
       </li>
     </ul>

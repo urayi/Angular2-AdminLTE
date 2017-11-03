@@ -22,7 +22,7 @@ import { Page404Component } from './../page-404/page-404.component';
           { path: 'motor', redirectTo: '', pathMatch: 'full' },
           { path: 'flujo', redirectTo: '', pathMatch: 'full' },
           { path: 'foot-notes', redirectTo: '', pathMatch: 'full' },
-          { path: 'report' , redirectTo: '', pathMatch: 'full' },
+          { path: 'report' , component: ReportGeneratorComponent },
           { path: 'tabla', component: TablesComponent },
           { path: 'status', component: StatusReportComponent },
           { path: 'reactivo' , redirectTo: '', pathMatch: 'full' },

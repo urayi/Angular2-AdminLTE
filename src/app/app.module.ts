@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { StarterRoutingModule } from './starter/starter-routing/starter-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -21,6 +20,7 @@ import { RegisterComponent } from './authenticator/register/register.component';
 import { ProfileComponent } from './starter/content/profile/profile.component';
 import { Page404Component } from './page-404/page-404.component';
 import { RequestComponent } from './authenticator/request/request.component';
+import { EjemploComponent } from './ejemplo/ejemplo.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +39,14 @@ import { RequestComponent } from './authenticator/request/request.component';
     RegisterComponent,
     ProfileComponent,
     Page404Component,
-    RequestComponent
+    RequestComponent,
+    EjemploComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    StarterRoutingModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

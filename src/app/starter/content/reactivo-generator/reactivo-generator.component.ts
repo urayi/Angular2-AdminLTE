@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReactivoGeneratorComponent implements OnInit {
 
+  owner = 'pricing';
+
+  setOwner( ownerRequest ) {
+    if ( ownerRequest === 'pricing' ) {
+      this.owner = 'pricing';
+    }else {
+      this.owner = 'revenue';
+    }
+  }
+
   constructor() { }
 
   ngOnInit() {
