@@ -20,7 +20,8 @@ import { RegisterComponent } from './authenticator/register/register.component';
 import { ProfileComponent } from './starter/content/profile/profile.component';
 import { Page404Component } from './page-404/page-404.component';
 import { RequestComponent } from './authenticator/request/request.component';
-import { EjemploComponent } from './ejemplo/ejemplo.component';
+
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -39,8 +40,7 @@ import { EjemploComponent } from './ejemplo/ejemplo.component';
     RegisterComponent,
     ProfileComponent,
     Page404Component,
-    RequestComponent,
-    EjemploComponent
+    RequestComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +48,7 @@ import { EjemploComponent } from './ejemplo/ejemplo.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

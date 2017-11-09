@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reactivo-generator.component.css']
 })
 export class ReactivoGeneratorComponent implements OnInit {
-
-  owner = 'pricing';
-
-  setOwner( ownerRequest ) {
+  owner: String;
+  setOwner( ownerRequest: String ) {
     if ( ownerRequest === 'pricing' ) {
       this.owner = 'pricing';
     }else {

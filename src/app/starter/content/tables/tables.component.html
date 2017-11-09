@@ -2,88 +2,181 @@
 <section class="content-header">
   <h1>
     Tabla
-    <small>Request</small>
+    <small>Report</small>
   </h1>
 </section>
 <!-- Your Page Content Here -->
+<!--table class="table table-bordered table-hover"-->
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
         <!-- /.box-header -->
-        <div class="box-body">
-          <table id="TableReport" class="table table-bordered table-hover">
+        <div class="box-body"> <!-- style="overflow-x:auto; overflow-y:scroll; height:70vh;" -->
+          <table  id="TableReport" class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th>C_o_S</th>
+                <th>ID_TARIFF</th>
+                <th>Receive_GFS</th>
+                <th>EFFECTIVE</th>
+                <th>DISCONTINUE</th>
+                <th>ACCION</th>
+                <th>CARRIER</th>
+                <th>DEPARTURE_CITY</th>
+                <th>ARRIVAL_CITY</th>
+                <th>DEPARTURE_COUNTRY</th>
+                <th>ARRIVAL_COUNTRY</th>
+                <th>NUM_TARIFF</th>
+                <th>FARE_RULE</th>
+                <th>FAREBASIS</th>
+                <th>FOOTNOTE</th>
+                <th>Sales_restriction</th>
+                <th>Travel_restriction</th>
+                <th>Routing</th>
+                <th>OW_RT</th>
+                <th>AMOUNT</th>
+                <th>CURRENCY</th>
+                <th>C01_ELIGIBILITY</th>
+                <th>ACC_y_Tipo_pasajero</th>
+                <th>C02_DAY_TIME</th>
+                <th>Day_application</th>
+                <th>Inbound_DOW</th>
+                <th>Outbound_DOW</th>
+                <th>C03_SEASONALITY</th>
+                <th>SEASON_TAG</th>
+                <th>Inbound_SEASON</th>
+                <th>Outbound_SEASON</th>
+                <th>C04_FLIGHT_APPLICATION</th>
+                <th>C05_ADVANCE_TICKETING</th>
+                <th>AP_Last_reservation</th>
+                <th>C06_MINIMUM_STAY</th>
+                <th>MN_stay</th>
+                <th>C07_MAXIMUM_STAY</th>
+                <th>C11_BLACKOUT_DATES</th>
+                <th>BLACKOUT_INBOUND</th>
+                <th>BLACKOUT_OUTBOUND</th>
+                <th>C12_SURCHARGES</th>
+                <th>Surcharges_Type</th>
+                <th>Surcharges_Amount</th>
+                <th>C14_TRAVEL_RESTRICTIONS</th>
+                <th>C15_SALES_RESTRICTIONS</th>
+                <th>FN_SEASON_INBOUND</th>
+                <th>FN_SEASON_OUTBOUND</th>
+                <th>FN_BO_INBOUND</th>
+                <th>FN_BO_OUTBOUND</th>
+                <th>PIVOT_A</th>
+                <th>PIVOT_B</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 5.0
-                </td>
-                <td>Win 95+</td>
-                <td>5</td>
-                <td>C</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 5.5
-                </td>
-                <td>Win 95+</td>
-                <td>5.5</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 6
-                </td>
-                <td>Win 98+</td>
-                <td>6</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 7</td>
-                <td>Win XP SP2+</td>
-                <td>7</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>AOL browser (AOL desktop)</td>
-                <td>Win XP</td>
-                <td>6</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Gecko</td>
-                <td>Firefox 1.0</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>1.7</td>
-                <td>A</td>
+              <tr *ngFor="let dato of datos">
+                <td><small>{{ dato.C_o_S }}</small><td>
+                <td><small>{{ dato.ID_TARIFF }}</small><td>
+                <td><small>{{ dato.Receive_GFS }}</small><td>
+                <td><small>{{ dato.EFFECTIVE }}</small><td>
+                <td><small>{{ dato.DISCONTINUE }}</small><td>
+                <td><small>{{ dato.ACCION }}</small><td>
+                <td><small>{{ dato.CARRIER }}</small><td>
+                <td><small>{{ dato.DEPARTURE_CITY }}</small><td>
+                <td><small>{{ dato.ARRIVAL_CITY }}</small><td>
+                <td><small>{{ dato.DEPARTURE_COUNTRY }}</small><td>
+                <td><small>{{ dato.ARRIVAL_COUNTRY }}</small><td>
+                <td><small>{{ dato.NUM_TARIFF }}</small><td>
+                <td><small>{{ dato.FARE_RULE }}</small><td>
+                <td><small>{{ dato.FAREBASIS }}</small><td>
+                <td><small>{{ dato.FOOTNOTE }}</small><td>
+                <td><small>{{ dato.Sales_restriction }}</small><td>
+                <td><small>{{ dato.Travel_restriction }}</small><td>
+                <td><small>{{ dato.Routing }}</small><td>
+                <td><small>{{ dato.OW_RT }}</small><td>
+                <td><small>{{ dato.AMOUNT }}</small><td>
+                <td><small>{{ dato.CURRENCY }}</small><td>
+                <td><small>{{ dato.C01_ELIGIBILITY }}</small><td>
+                <td><small>{{ dato.ACC_y_Tipo_pasajero }}</small><td>
+                <td><small>{{ dato.C02_DAY_TIME }}</small><td>
+                <td><small>{{ dato.Day_application }}</small><td>
+                <td><small>{{ dato.Inbound_DOW }}</small><td>
+                <td><small>{{ dato.Outbound_DOW }}</small><td>
+                <td><small>{{ dato.C03_SEASONALITY }}</small><td>
+                <td><small>{{ dato.SEASON_TAG }}</small><td>
+                <td><small>{{ dato.Inbound_SEASON }}</small><td>
+                <td><small>{{ dato.Outbound_SEASON }}</small><td>
+                <td><small>{{ dato.C04_FLIGHT_APPLICATION }}</small><td>
+                <td><small>{{ dato.C05_ADVANCE_TICKETING }}</small><td>
+                <td><small>{{ dato.AP_Last_reservation }}</small><td>
+                <td><small>{{ dato.C06_MINIMUM_STAY }}</small><td>
+                <td><small>{{ dato.MN_stay }}</small><td>
+                <td><small>{{ dato.C07_MAXIMUM_STAY }}</small><td>
+                <td><small>{{ dato.C11_BLACKOUT_DATES }}</small><td>
+                <td><small>{{ dato.BLACKOUT_INBOUND }}</small><td>
+                <td><small>{{ dato.BLACKOUT_OUTBOUND }}</small><td>
+                <td><small>{{ dato.C12_SURCHARGES }}</small><td>
+                <td><small>{{ dato.Surcharges_Type }}</small><td>
+                <td><small>{{ dato.Surcharges_Amount }}</small><td>
+                <td><small>{{ dato.C14_TRAVEL_RESTRICTIONS }}</small><td>
+                <td><small>{{ dato.C15_SALES_RESTRICTIONS }}</small><td>
+                <td><small>{{ dato.FN_SEASON_INBOUND }}</small><td>
+                <td><small>{{ dato.FN_SEASON_OUTBOUND }}</small><td>
+                <td><small>{{ dato.FN_BO_INBOUND }}</small><td>
+                <td><small>{{ dato.FN_BO_OUTBOUND }}</small><td>
+                <td><small>{{ dato.PIVOT_A }}</small><td>
+                <td><small>{{ dato.PIVOT_B }}</small><td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th>C_o_S</th>
+                <th>ID_TARIFF</th>
+                <th>Receive_GFS</th>
+                <th>EFFECTIVE</th>
+                <th>DISCONTINUE</th>
+                <th>ACCION</th>
+                <th>CARRIER</th>
+                <th>DEPARTURE_CITY</th>
+                <th>ARRIVAL_CITY</th>
+                <th>DEPARTURE_COUNTRY</th>
+                <th>ARRIVAL_COUNTRY</th>
+                <th>NUM_TARIFF</th>
+                <th>FARE_RULE</th>
+                <th>FAREBASIS</th>
+                <th>FOOTNOTE</th>
+                <th>Sales_restriction</th>
+                <th>Travel_restriction</th>
+                <th>Routing</th>
+                <th>OW_RT</th>
+                <th>AMOUNT</th>
+                <th>CURRENCY</th>
+                <th>C01_ELIGIBILITY</th>
+                <th>ACC_y_Tipo_pasajero</th>
+                <th>C02_DAY_TIME</th>
+                <th>Day_application</th>
+                <th>Inbound_DOW</th>
+                <th>Outbound_DOW</th>
+                <th>C03_SEASONALITY</th>
+                <th>SEASON_TAG</th>
+                <th>Inbound_SEASON</th>
+                <th>Outbound_SEASON</th>
+                <th>C04_FLIGHT_APPLICATION</th>
+                <th>C05_ADVANCE_TICKETING</th>
+                <th>AP_Last_reservation</th>
+                <th>C06_MINIMUM_STAY</th>
+                <th>MN_stay</th>
+                <th>C07_MAXIMUM_STAY</th>
+                <th>C11_BLACKOUT_DATES</th>
+                <th>BLACKOUT_INBOUND</th>
+                <th>BLACKOUT_OUTBOUND</th>
+                <th>C12_SURCHARGES</th>
+                <th>Surcharges_Type</th>
+                <th>Surcharges_Amount</th>
+                <th>C14_TRAVEL_RESTRICTIONS</th>
+                <th>C15_SALES_RESTRICTIONS</th>
+                <th>FN_SEASON_INBOUND</th>
+                <th>FN_SEASON_OUTBOUND</th>
+                <th>FN_BO_INBOUND</th>
+                <th>FN_BO_OUTBOUND</th>
+                <th>PIVOT_A</th>
+                <th>PIVOT_B</th>
               </tr>
             </tfoot>
           </table>

@@ -1,4 +1,4 @@
-/*$.widget.bridge('uibutton', $.ui.button);
+$.widget.bridge('uibutton', $.ui.button);
 
 //receive calls from typescript code to update the layouts
 var SpartaGui = (function() {
@@ -13,13 +13,15 @@ var SpartaGui = (function() {
   }
 })(SpartaGui||{});
 
-/*$(function () {
+
+/*$(document).ready(function () {
   $('#TableReport').DataTable({
-    'paging'      : true,
-    'lengthChange': false,
-    'searching'   : false,
-    'ordering'    : true,
-    'info'        : true,
-    'autoWidth'   : false
+    "scrollY"     : 500,
+    "scrollX"     : true
   })
-})*/
+});*/
+var myElement = document.getElementById(myElement);
+var hammertime = new Hammer(myElement);
+hammertime.on('pan', function(ev) {
+	console.log(ev);
+});

@@ -1,0 +1,242 @@
+{
+    "data": "C_o_S",
+    "title": "C_o_S"
+},
+{
+    "data": "ID_TARIFF",
+    "title": "ID_TARIFF"
+}
+{
+    "data": "Receive_GFS",
+    "title": "Receive_GFS",
+},
+{
+    "data": "EFFECTIVE",
+    "title": "EFFECTIVE"
+},
+{
+    "data": "DISCONTINUE",
+    "title": "DISCONTINUE"
+},
+{
+    "data": "ACCION",
+    "title": "ACCION"
+},
+{
+    "data": "CARRIER",
+    "title": "CARRIER"
+},
+{
+    "data": "DEPARTURE_CITY",
+    "title": "DEPARTURE_CITY"
+},
+{
+    "data": "ARRIVAL_CITY",
+    "title": "ARRIVAL_CITY"
+},
+{
+    "data": "DEPARTURE_COUNTRY",
+    "title": "DEPARTURE_COUNTRY"
+},
+{
+    "data": "ARRIVAL_COUNTRY",
+    "title": "ARRIVAL_COUNTRY"
+},
+{
+    "data": "NUM_TARIFF",
+    "title": "NUM_TARIFF"
+},
+{
+    "data": "FARE_RULE",
+    "title": "FARE_RULE"
+},
+{
+    "data": "FAREBASIS",
+    "title": "FAREBASIS"
+},
+{
+    "data": "FOOTNOTE",
+    "title": "FOOTNOTE"
+},
+{
+    "data": "Sales_restriction",
+    "title": "Sales_restriction"
+},
+{
+    "data": "Travel_restriction",
+    "title": "Travel_restriction"
+},
+{
+    "data": "Routing",
+    "title": "Routing"
+},
+{
+    "data": "OW_RT",
+    "title": "OW_RT"
+},
+{
+    "data": "AMOUNT",
+    "title": "AMOUNT"
+},
+{
+    "data": "CURRENCY",
+    "title": "CURRENCY"
+},
+{
+    "data": "C01_ELIGIBILITY",
+    "title": "C01_ELIGIBILITY"
+},
+{
+    "data": "ACC_y_Tipo_pasajero",
+    "title": "ACC_y_Tipo_pasajero"
+},
+{
+    "data": "C02_DAY_TIME",
+    "title": "C02_DAY_TIME"
+},
+{
+    "data": "Day_application",
+    "title": "Day_application"
+},
+{
+    "data": "Inbound_DOW",
+    "title": "Inbound_DOW"
+},
+{
+    "data": "Outbound_DOW",
+    "title": "Outbound_DOW"
+},
+{
+    "data": "C03_SEASONALITY",
+    "title": "C03_SEASONALITY",
+},
+{
+    "data": "SEASON_TAG",
+    "title": "SEASON_TAG"
+},
+{
+    "data": "Inbound_SEASON",
+    "title": "Inbound_SEASON"
+},
+{
+    "data": "Outbound_SEASON",
+    "title": "Outbound_SEASON"
+},
+{
+    "data": "C04_FLIGHT_APPLICATION",
+    "title": "C04_FLIGHT_APPLICATION"
+},
+{
+    "data": "C05_ADVANCE_TICKETING",
+    "title": "C05_ADVANCE_TICKETING"
+},
+{
+    "data": "AP_Last_reservation",
+    "title": "AP_Last_reservation"
+},
+{
+    "data": "C06_MINIMUM_STAY",
+    "title": "C06_MINIMUM_STAY"
+},
+{
+    "data": "MN_stay",
+    "title": "MN_stay"
+},
+{
+    "data": "C07_MAXIMUM_STAY",
+    "title": "C07_MAXIMUM_STAY"
+},
+{
+    "data": "C11_BLACKOUT_DATES",
+    "title": "C11_BLACKOUT_DATES"
+},
+{
+    "data": "BLACKOUT_INBOUND",
+    "title": "BLACKOUT_INBOUND"
+},
+{
+    "data": "BLACKOUT_OUTBOUND",
+    "title": "BLACKOUT_OUTBOUND"
+},
+{
+    "data": "C12_SURCHARGES",
+    "title": "C12_SURCHARGES"
+},
+{
+    "data": "Surcharges_Type",
+    "title": "Surcharges_Type"
+},
+{
+    "data": "Surcharges_Amount",
+    "title": "Surcharges_Amount"
+},
+{
+    "data": "C14_TRAVEL_RESTRICTIONS",
+    "title": "C14_TRAVEL_RESTRICTIONS"
+},
+{
+    "data": "C15_SALES_RESTRICTIONS",
+    "title": "C15_SALES_RESTRICTIONS"
+},
+{
+    "data": "FN_SEASON_INBOUND",
+    "title": "FN_SEASON_INBOUND"
+},
+{
+    "data": "FN_SEASON_OUTBOUND",
+    "title": "FN_SEASON_OUTBOUND"
+},
+{
+    "data": "FN_BO_INBOUND",
+    "title": "FN_BO_INBOUND"
+},
+{
+    "data": "FN_BO_OUTBOUND",
+    "title": "FN_BO_OUTBOUND"
+},
+{
+    "data": "PIVOT_A",
+    "title": "PIVOT_A"
+},
+{
+    "data": "PIVOT_B",
+    "title": "PIVOT_B"
+}
+
+import { Component, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Subject } from 'rxjs/Rx';
+import { Dato } from './../../../classes/dato';
+
+import 'rxjs/add/operator/map';
+
+@Component({
+  selector: 'app-tables',
+  templateUrl: './tables.component.html',
+  styleUrls: ['./tables.component.css']
+})
+
+export class TablesComponent implements OnInit {
+  datos: Dato[];
+  // We use this trigger because fetching the list of persons can be quite long,
+  // thus we ensure the data is fetched before rendering
+  dtTrigger: Subject<any> = new Subject();
+
+  constructor(private http: Http) { }
+
+  ngOnInit(): void {
+    this.http.get('./../../../assets/data/tabla.json')
+      .map(this.extractData)
+      .subscribe(datos => {
+        this.datos = datos;
+        console.log(datos);
+        // Calling the DT trigger to manually render the table
+        this.dtTrigger.next();
+      });
+  }
+
+  private extractData(res: Response) {
+    const body = res.json();
+    return body.data || {};
+  }
+}

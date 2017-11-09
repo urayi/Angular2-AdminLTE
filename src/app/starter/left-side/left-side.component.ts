@@ -11,5 +11,7 @@ export class LeftSideComponent implements OnInit {
 
   ngOnInit() {
   }
+  setOwner(owner: string) {
 
+  }
 }
