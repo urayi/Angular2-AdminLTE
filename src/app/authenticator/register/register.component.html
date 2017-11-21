@@ -1,3 +1,61 @@
-<p>
-  register works!
-</p>
+<div class="login-box jumbotron">
+  <div class="login-logo">
+    <a routerLink="./" routerLinkActive="active">
+      <img src="./assets/img/logos/logo-latam-mu.svg" alt="LATAM" width="100%" height="60">
+    </a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <h3 class="login-box-msg"><strong>Registro de Usuario</strong></h3>
+
+    <form [formGroup]="registerForm" novalidate>
+      <!--method="post"-->
+      <div class="form-group has-feedback">
+        <input type="user" class="form-control" placeholder="Username" formControlName="username">
+        <span class="fa fa-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+        <span class="fa fa-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        <span class="fa fa-lock form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Repetir Password" formControlName="rePassword">
+        <span class="fa fa-sign-in form-control-feedback"></span>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox" formControlName="terms">
+              <strong>Términos y Condiciones</strong>
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-success btn-block" (click)="register()">
+            <strong>Registrar</strong>
+          </button>
+          <i *ngIf="submitted" class="fa fa-spinner fa-spin fa-fw"></i>
+        </div>
+      </div>
+    </form>
+    <div class="social-auth-links text-center">
+      <p>-</p>
+      <a routerLink="./" routerLinkActive="active" class="btn btn-block btn-social btn-google" (click)='loginWithGoogle()'>
+        <i class="fa fa-google"></i>
+        <strong>Inicia Sesión con Google</strong>
+      </a>
+    </div>
+    <!-- /.social-auth-links -->
+    <a routerLink="./login" routerLinkActive="active" class="text-warning">
+      <strong>Ya estoy registrado</strong>
+    </a>
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->

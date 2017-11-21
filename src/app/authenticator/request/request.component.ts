@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormArray, FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-request',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestComponent implements OnInit {
 
-  constructor() { }
+  requestForm: FormGroup;
+  submitted = false;
+
+  constructor(private buildRequest: FormBuilder) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.requestForm = this.buildRequest.group({
+      email: ['', Validators.email, Validators.required]
+    });
+  }
+
+  request() { this.submitted = true; }
 
   ngOnInit() {
   }

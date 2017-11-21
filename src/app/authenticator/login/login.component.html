@@ -1,50 +1,54 @@
-<div class="login-box">
+<div class="login-box jumbotron">
   <div class="login-logo">
-    <a routerLink="/starter" routerLinkActive="active">
-      <img src="./assets/img/logos/logo-latam-mu.svg" alt="LATAM" width="100%" height="40">
+    <a routerLink="./" routerLinkActive="active">
+      <img src="./assets/img/logos/logo-latam-mu.svg" alt="LATAM" width="100%" height="60">
     </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Inicia sisión</p>
+    <h3 class="login-box-msg"><strong>Inicia sesión</strong></h3>
 
-    <form action="" method="post">
+    <form [formGroup]="loginForm" novalidate>
+      <!--method="post"-->
       <div class="form-group has-feedback">
-        <input type="user" class="form-control" placeholder="User">
+        <input type="user" class="form-control" placeholder="Username" formControlName="username">
         <span class="fa fa-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
         <span class="fa fa-lock form-control-feedback"></span>
       </div>
-      <div class="row">
-        <div class="col-xs-8">
+      <div class="form-group">
+        <div class="col-xs-4">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Recordarme
+              <input type="checkbox" formControlName="remember"><strong>Recordarme</strong>
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+          <button type="submit" class="btn btn-success btn-block" (click)="login()"><strong>Login</strong></button>
+          <i *ngIf="submitted" class="fa fa-spinner fa-spin fa-fw"></i>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="button" class="btn btn-danger btn-block"
+          routerLink="./register" routerLinkActive="active"><strong>Registro</strong></button>
         </div>
         <!-- /.col -->
       </div>
     </form>
-
     <div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat">
-        <i class="fa fa-google-plus"></i>  Inicia Sesión con Google+
+      <p>-</p>
+      <a routerLink="./" routerLinkActive="active" class="btn btn-block btn-social btn-google" (click)='loginWithGoogle()'>
+        <i class="fa fa-google"></i><strong>Inicia Sesión con Google</strong>
       </a>
     </div>
     <!-- /.social-auth-links -->
-
-    <a href="#">I forgot my password</a>
-    <br>
-    <a href="register.html" class="text-center">Register a new membership</a>
-
+    <a routerLink="./request" routerLinkActive="active" class="text-warning">
+      <strong>Recuperar Contraseña</strong>
+    </a>
   </div>
   <!-- /.login-box-body -->
 </div>

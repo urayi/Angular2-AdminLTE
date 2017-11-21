@@ -13,7 +13,7 @@
       <div class="box">
         <!-- /.box-header -->
         <div class="box-body"> <!-- style="overflow-x:auto; overflow-y:scroll; height:70vh;" -->
-          <table  id="TableReport" class="table table-bordered table-hover">
+          <table  id="TableReport" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
               <tr>
                 <th>C_o_S</th>
@@ -71,57 +71,57 @@
             </thead>
             <tbody>
               <tr *ngFor="let dato of datos">
-                <td><small>{{ dato.C_o_S }}</small><td>
-                <td><small>{{ dato.ID_TARIFF }}</small><td>
-                <td><small>{{ dato.Receive_GFS }}</small><td>
-                <td><small>{{ dato.EFFECTIVE }}</small><td>
-                <td><small>{{ dato.DISCONTINUE }}</small><td>
-                <td><small>{{ dato.ACCION }}</small><td>
-                <td><small>{{ dato.CARRIER }}</small><td>
-                <td><small>{{ dato.DEPARTURE_CITY }}</small><td>
-                <td><small>{{ dato.ARRIVAL_CITY }}</small><td>
-                <td><small>{{ dato.DEPARTURE_COUNTRY }}</small><td>
-                <td><small>{{ dato.ARRIVAL_COUNTRY }}</small><td>
-                <td><small>{{ dato.NUM_TARIFF }}</small><td>
-                <td><small>{{ dato.FARE_RULE }}</small><td>
-                <td><small>{{ dato.FAREBASIS }}</small><td>
-                <td><small>{{ dato.FOOTNOTE }}</small><td>
-                <td><small>{{ dato.Sales_restriction }}</small><td>
-                <td><small>{{ dato.Travel_restriction }}</small><td>
-                <td><small>{{ dato.Routing }}</small><td>
-                <td><small>{{ dato.OW_RT }}</small><td>
-                <td><small>{{ dato.AMOUNT }}</small><td>
-                <td><small>{{ dato.CURRENCY }}</small><td>
-                <td><small>{{ dato.C01_ELIGIBILITY }}</small><td>
-                <td><small>{{ dato.ACC_y_Tipo_pasajero }}</small><td>
-                <td><small>{{ dato.C02_DAY_TIME }}</small><td>
-                <td><small>{{ dato.Day_application }}</small><td>
-                <td><small>{{ dato.Inbound_DOW }}</small><td>
-                <td><small>{{ dato.Outbound_DOW }}</small><td>
-                <td><small>{{ dato.C03_SEASONALITY }}</small><td>
-                <td><small>{{ dato.SEASON_TAG }}</small><td>
-                <td><small>{{ dato.Inbound_SEASON }}</small><td>
-                <td><small>{{ dato.Outbound_SEASON }}</small><td>
-                <td><small>{{ dato.C04_FLIGHT_APPLICATION }}</small><td>
-                <td><small>{{ dato.C05_ADVANCE_TICKETING }}</small><td>
-                <td><small>{{ dato.AP_Last_reservation }}</small><td>
-                <td><small>{{ dato.C06_MINIMUM_STAY }}</small><td>
-                <td><small>{{ dato.MN_stay }}</small><td>
-                <td><small>{{ dato.C07_MAXIMUM_STAY }}</small><td>
-                <td><small>{{ dato.C11_BLACKOUT_DATES }}</small><td>
-                <td><small>{{ dato.BLACKOUT_INBOUND }}</small><td>
-                <td><small>{{ dato.BLACKOUT_OUTBOUND }}</small><td>
-                <td><small>{{ dato.C12_SURCHARGES }}</small><td>
-                <td><small>{{ dato.Surcharges_Type }}</small><td>
-                <td><small>{{ dato.Surcharges_Amount }}</small><td>
-                <td><small>{{ dato.C14_TRAVEL_RESTRICTIONS }}</small><td>
-                <td><small>{{ dato.C15_SALES_RESTRICTIONS }}</small><td>
-                <td><small>{{ dato.FN_SEASON_INBOUND }}</small><td>
-                <td><small>{{ dato.FN_SEASON_OUTBOUND }}</small><td>
-                <td><small>{{ dato.FN_BO_INBOUND }}</small><td>
-                <td><small>{{ dato.FN_BO_OUTBOUND }}</small><td>
-                <td><small>{{ dato.PIVOT_A }}</small><td>
-                <td><small>{{ dato.PIVOT_B }}</small><td>
+                <td><small>{{ dato.C_o_S }}</small></td>
+                <td><small>{{ dato.ID_TARIFF }}</small></td>
+                <td><small>{{ dato.Receive_GFS }}</small></td>
+                <td><small>{{ dato.EFFECTIVE }}</small></td>
+                <td><small>{{ dato.DISCONTINUE }}</small></td>
+                <td><small>{{ dato.ACCION }}</small></td>
+                <td><small>{{ dato.CARRIER }}</small></td>
+                <td><small>{{ dato.DEPARTURE_CITY }}</small></td>
+                <td><small>{{ dato.ARRIVAL_CITY }}</small></td>
+                <td><small>{{ dato.DEPARTURE_COUNTRY }}</small></td>
+                <td><small>{{ dato.ARRIVAL_COUNTRY }}</small></td>
+                <td><small>{{ dato.NUM_TARIFF }}</small></td>
+                <td><small>{{ dato.FARE_RULE }}</small></td>
+                <td><small>{{ dato.FAREBASIS }}</small></td>
+                <td><small>{{ dato.FOOTNOTE }}</small></td>
+                <td><small>{{ dato.Sales_restriction }}</small></td>
+                <td><small>{{ dato.Travel_restriction }}</small></td>
+                <td><small>{{ dato.Routing }}</small></td>
+                <td><small>{{ dato.OW_RT }}</small></td>
+                <td><small>{{ dato.AMOUNT }}</small></td>
+                <td><small>{{ dato.CURRENCY }}</small></td>
+                <td><small>{{ dato.C01_ELIGIBILITY }}</small></td>
+                <td><small>{{ dato.ACC_y_Tipo_pasajero }}</small></td>
+                <td><small>{{ dato.C02_DAY_TIME }}</small></td>
+                <td><small>{{ dato.Day_application }}</small></td>
+                <td><small>{{ dato.Inbound_DOW }}</small></td>
+                <td><small>{{ dato.Outbound_DOW }}</small></td>
+                <td><small>{{ dato.C03_SEASONALITY }}</small></td>
+                <td><small>{{ dato.SEASON_TAG }}</small></td>
+                <td><small>{{ dato.Inbound_SEASON }}</small></td>
+                <td><small>{{ dato.Outbound_SEASON }}</small></td>
+                <td><small>{{ dato.C04_FLIGHT_APPLICATION }}</small></td>
+                <td><small>{{ dato.C05_ADVANCE_TICKETING }}</small></td>
+                <td><small>{{ dato.AP_Last_reservation }}</small></td>
+                <td><small>{{ dato.C06_MINIMUM_STAY }}</small></td>
+                <td><small>{{ dato.MN_stay }}</small></td>
+                <td><small>{{ dato.C07_MAXIMUM_STAY }}</small></td>
+                <td><small>{{ dato.C11_BLACKOUT_DATES }}</small></td>
+                <td><small>{{ dato.BLACKOUT_INBOUND }}</small></td>
+                <td><small>{{ dato.BLACKOUT_OUTBOUND }}</small></td>
+                <td><small>{{ dato.C12_SURCHARGES }}</small></td>
+                <td><small>{{ dato.Surcharges_Type }}</small></td>
+                <td><small>{{ dato.Surcharges_Amount }}</small></td>
+                <td><small>{{ dato.C14_TRAVEL_RESTRICTIONS }}</small></td>
+                <td><small>{{ dato.C15_SALES_RESTRICTIONS }}</small></td>
+                <td><small>{{ dato.FN_SEASON_INBOUND }}</small></td>
+                <td><small>{{ dato.FN_SEASON_OUTBOUND }}</small></td>
+                <td><small>{{ dato.FN_BO_INBOUND }}</small></td>
+                <td><small>{{ dato.FN_BO_OUTBOUND }}</small></td>
+                <td><small>{{ dato.PIVOT_A }}</small></td>
+                <td><small>{{ dato.PIVOT_B }}</small></td>
               </tr>
             </tbody>
             <tfoot>

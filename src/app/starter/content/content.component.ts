@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// Variable in assets/js/scripts.js file
-//declare var SpartaGui: any;
+
+declare var $: any;
 
 @Component({
   selector: 'app-content',
@@ -18,8 +18,7 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Update the SpartaGUI layouts
-    //SpartaGui.init();
+
   }
 
 }

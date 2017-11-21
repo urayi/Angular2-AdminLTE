@@ -1,0 +1,58 @@
+{
+    "otro": [
+        {
+            "origin": "sss",
+            "destination": "aaa",
+            "carrier": "ww"
+        },
+        {
+            "origin": "ddd",
+            "destination": "www",
+            "carrier": "zz"
+        }
+    ]
+    "details": [
+        {
+            "carrier": "LA",
+            "origin": "SCL",
+            "destination": "JFK"
+        },
+        {
+            "carrier": "LA",
+            "origin": "BOG",
+            "destination": "SCL"
+        },
+        {
+            "carrier": "LA",
+            "origin": "BOG",
+            "destination": "JFK"
+        },
+        {
+            "carrier": "LA",
+            "origin": "COR",
+            "destination": "SCL"
+        },
+        {
+            "carrier": "LA",
+            "origin": "COR",
+            "destination": "JFK"
+        },
+        {
+            "carrier": "AA",
+            "origin": "VRE",
+            "destination": "MIA"
+        },
+        {
+            "carrier": "AA",
+            "origin": "EZE",
+            "destination": "MIA"
+        },
+        {
+            "carrier": "LA",
+            "origin": "MAD",
+            "destination": "SCL"
+        }
+    ],
+    "userRole": "SPRT_ADMIN",
+    "userId": "testADM"
+}

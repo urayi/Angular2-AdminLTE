@@ -15,41 +15,27 @@
   <!-- Header Navbar -->
   <nav class="navbar navbar-static-top skin-black" role="navigation">
     <!-- Sidebar toggle button-->
-    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+    <a routerLink="." routerLinkActive="active" class="sidebar-toggle" data-toggle="offcanvas" role="button">
       <span class="sr-only">Toggle navigation</span>
     </a>
     <!-- Navbar Right Menu -->
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
         <!-- Messages: style can be found in dropdown.less-->
-        <!-- User Account Menu -->
-        <li class="dropdown user user-menu">
-          <!-- Menu Toggle Button -->
-          <a routerLink="" routerLinkActive="active" class="dropdown-toggle" data-toggle="dropdown">
-            <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <span class="hidden-xs">Nombre de Usuario</span>
-          </a>
-          <ul class="dropdown-menu">
-            <!-- Menu Footer-->
-            <li class="user-footer">
-              <div class="pull-left">
-                <a routerLink="/profile" routerLinkActive="active" class="btn btn-default btn-flat">Perfil</a>
-              </div>
-              <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Cerrar Sesión</a>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <!-- User Button -->
+        <!-- User Account Buuton -->
         <li>
-          <a href="#">
+          <a routerLink="/profile" routerLinkActive="active">
+            <span class="hidden-xs">{{user}}</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/profile" routerLinkActive="active">
             <i class="fa fa-user"></i>
           </a>
         </li>
         <!-- Sign-out Button -->
         <li>
-          <a href="#" alt="Cerrar Sesion">
+          <a routerLink="/login" routerLinkActive="active" alt="Cerrar Sesion">
             <i class="fa fa-sign-out"></i>
           </a>
         </li>
@@ -57,25 +43,25 @@
         <!-- User Account Menu -->
         <li class="dropdown user user-menu">
           <!-- Menu Toggle Button -->
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <a routerLink="." routerLinkActive="active" class="dropdown-toggle" data-toggle="dropdown">
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <span class="hidden-xs"><i class="flag-icon flag-icon-{{idioma}}"></i></span>
+            <span><i class="flag-icon flag-icon-{{idioma}}"></i></span>
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a routerLink="." routerLinkActive="active" (onclick)="setIdioma('es')">
+              <a routerLink="." routerLinkActive="active" (click)="setIdioma('es')">
                 <i class="flag-icon flag-icon-es"></i><span>Español</span>
               </a>
             </li>
             <li role="separator" class="divider"></li>
             <li>
-              <a routerLink="." routerLinkActive="active" (onclick)="setIdioma('us')">
+              <a routerLink="." routerLinkActive="active" (click)="setIdioma('us')">
                 <i class="flag-icon flag-icon-us"></i><span>Inglés</span>
               </a>
             </li>
             <li role="separator" class="divider"></li>
             <li>
-              <a routerLink="." routerLinkActive="active" (onclick)="setIdioma('br')">
+              <a routerLink="." routerLinkActive="active" (click)="setIdioma('br')">
                 <i class="flag-icon flag-icon-br"></i><span>Portugués</span>
               </a>
             </li> 
@@ -84,7 +70,7 @@
         </li>
         <!-- Control Sidebar Toggle Button -->
         <li>
-          <a href="#" data-toggle="control-sidebar">
+          <a routerLink="." routerLinkActive="active" data-toggle="control-sidebar">
             <i class="fa fa-gears"></i>
           </a>
         </li>

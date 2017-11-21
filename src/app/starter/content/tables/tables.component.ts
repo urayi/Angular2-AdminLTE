@@ -10,6 +10,7 @@ declare var $;
 
 export class TablesComponent implements OnInit {
   datos: any = [];
+
   constructor(public data: DataService) {
     this.LoadTableData();
   }
@@ -17,18 +18,20 @@ export class TablesComponent implements OnInit {
   ngOnInit(): void {
     $(function () {
       $('#TableReport').DataTable({
-        'scrollY'     : '50vh',
-        'scrollX'     : true
+        'scrollY': '60vh',
+        'scrollX': true,
+        'paging': false
       });
     });
   }
 
-  private LoadTableData () {
-    this.data.LoadData ().subscribe(
+  private LoadTableData() {
+    this.data.LoadData().subscribe(
       data => {
         this.datos = data;
         console.log(data);
       }
     );
   }
+
 }

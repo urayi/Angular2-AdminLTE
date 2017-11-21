@@ -1,0 +1,35 @@
+{
+    "userId": "testADM",
+    "reports": [
+        {
+            "reportId": 2,
+            "userId": "testADM",
+            "fileName": null,
+            "status": 0, // -1: Error, 0: Progress, 1: Success
+            "dateRequest": 1510772451000,
+            "dateResponse": null,
+            "message": null,
+            "request": 2 // 1 OnDemand,  2 Pricing, 3 Revenue
+        },
+        {
+            "reportId": 3,
+            "userId": "testADM",
+            "fileName": null,
+            "status": -1,
+            "dateRequest": 1510772746000,
+            "dateResponse": 1510772746000,
+            "message": "No hay reacciones disponibles",
+            "request": 2
+        },
+        {
+            "reportId": 4,
+            "userId": "testADM",
+            "fileName": null,
+            "status": -1,
+            "dateRequest": 1510772773000,
+            "dateResponse": 1510772773000,
+            "message": "No hay reacciones disponibles",
+            "request": 2
+        }
+    ]
+}

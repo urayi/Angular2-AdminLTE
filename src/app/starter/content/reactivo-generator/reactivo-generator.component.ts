@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskReactivo } from './../../../classes/task-reactivo';
 
 @Component({
   selector: 'app-reactivo-generator',

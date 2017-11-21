@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from './../../classes/person';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   idioma = 'es';
-  setIdioma(lang) {
-    this.idioma = lang;
-  }
-
-  constructor() { }
+  user = 'spartauser';
 
   ngOnInit() {
+
+  }
+
+  setIdioma(lang): void  {
+    this.idioma = lang;
+    console.log(this.idioma);
   }
 
 }
