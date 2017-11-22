@@ -92,7 +92,7 @@
             "carrier": "LA"
         }
     ]
-}
+},
 
 
 {
@@ -148,4 +148,66 @@
             "destination": "CO"
         }
     ]
+},
+
+
+
+{
+    "userRole": "SPRT_ADMIN",
+    "userId": "testADM",
+    "details": [
+        {
+            "origin": "SCL",
+            "destination": "BOG",
+            "carrier": "LA"
+        },
+        {
+            "origin": "SCL",
+            "destination": "EFT",
+            "carrier": "LA"
+        },
+        {
+            "origin": "SCL",
+            "destination": "VEF",
+            "carrier": "LA"
+        },
+        {
+            "origin": "VEF",
+            "destination": "EFT",
+            "carrier": "LA"
+        },
+        {
+            "origin": "VEF",
+            "destination": "CDE",
+            "carrier": "LA"
+        },
+        {
+            "origin": "VEF",
+            "destination": "SBG",
+            "carrier": "LA"
+        },
+        {
+            "origin": "GTE",
+            "destination": "EFT",
+            "carrier": "LA"
+        },
+        {
+            "origin": "GTE",
+            "destination": "CDE",
+            "carrier": "LA"
+        },
+        {
+            "origin": "CSS",
+            "destination": "EZE",
+            "carrier": "LA"
+        },
+        {
+            "origin": "CSS",
+            "destination": "EZE",
+            "carrier": "JJ"
+        }
+    ]
+} {
+    "newTask": {},
+    "dataTasks": {}
 }
