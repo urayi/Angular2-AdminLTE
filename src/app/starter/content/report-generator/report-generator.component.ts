@@ -7,10 +7,15 @@ import { Task } from './../../../classes/task';
   styleUrls: ['./report-generator.component.css']
 })
 export class ReportGeneratorComponent implements OnInit {
-
-  newTask: Task = new Task();
-  tasks: Task[] = [];
-  id = 0;
+  // Array newTask: array auxiliar para cargar un item a la solicitud de reporte ODC
+  private newTask: Task = new Task();
+  // Array tasks: contiene todas las solicitudes que se realizarán a la plataforma
+  private tasks: Array<Task> = [];
+  private data: Object;
+  // variables auxiliares
+  private origin: Array<string>;
+  private destination: Array<string>;
+  private carrier: Array<string> = [];
   submitted = false;
   model: any;
 
@@ -20,48 +25,82 @@ export class ReportGeneratorComponent implements OnInit {
   ngOnInit() {
   }
 
-  addTask() {
+  // Método addTask(): agrega al array tasks las nuevas solicitudes
+  private addTask(): void {
 
-    this.tasks.push({
-      id: this.tasks.length,
-      origin: this.newTask.origin.toUpperCase( ),
-      destination: this.newTask.destination.toUpperCase( ),
-      carrier: this.newTask.carrier.toUpperCase( )
-    });
-    for (let i = 0; i < this.tasks.length; i++) {
-      this.tasks[i].id = i;
+    // const trimArray = array => array.map(string => string.trim())
+    this.origin = this.newTask.origin.toUpperCase().split(',')
+      .map(string => string.trim())
+      .filter((item, index, array) => (item !== ''))
+      .filter((item, index, array) => (array.indexOf(item) === index));
+    this.destination = this.newTask.destination.toUpperCase().split(',')
+      .map(string => string.trim())
+      .filter((item, index, array) => (item !== ''))
+      .filter((item, index, array) => (array.indexOf(item) === index));
+    this.carrier = this.newTask.carrier.toUpperCase().split(',')
+      .map(string => string.trim())
+      .filter((item, index, array) => (item !== ''))
+      .filter((item, index, array) => (array.indexOf(item) === index));
+
+    for (const i of this.carrier) {
+      // Acá el validador del dato
+      for (const j of this.origin) {
+        // Acá el validador del dato
+        for (const k of this.destination) {
+          // Acá el validador del dato
+          if (j !== k) {
+            this.tasks.push({ origin: j, destination: k, carrier: i });
+          }
+        }
+      }
     }
-    console.log(this.newTask);
+    // eliminación de tareas duplicadas
+    this.tasks = this.removeDuplicates(this.tasks);
+    console.log('expandido');
     console.log(this.tasks);
     this.newTask = new Task();
-
   }
 
-  updateTask(id: number) {
+  removeDuplicates(array: Array<Task>) {
+    return array = array.reduce((past, actual) => {
+      const key = [actual.origin, actual.destination, actual.carrier].join('|');
+      if (past.temp.indexOf(key) === -1) {
+        past.out.push(actual);
+        past.temp.push(key);
+      }
+      return past;
+    },
+      { temp: [], out: [] }).out;
+  }
+
+  private updateTask(id: number) {
 
     this.tasks[id] = ({
-      id: id,
-      origin: this.tasks[id].origin.toUpperCase( ),
-      destination: this.tasks[id].destination.toUpperCase( ),
-      carrier: this.tasks[id].carrier.toUpperCase( )
+      origin: this.tasks[id].origin.toUpperCase(),
+      destination: this.tasks[id].destination.toUpperCase(),
+      carrier: this.tasks[id].carrier.toUpperCase()
     });
+    this.tasks = this.removeDuplicates(this.tasks);
     console.log(this.tasks);
 
   }
 
-  delTask(id: number) {
+  private delTask(id: number) {
 
     this.tasks.splice(id, 1);
-    for (let i = 0; i < this.tasks.length; i++) {
-      this.tasks[i].id = i;
-    }
     console.log(this.tasks);
 
   }
 
-  getReport() {
+  private getReport() {
+
     this.submitted = true;
-    this.model = JSON.stringify(this.tasks);
+    this.data = {
+      userRole: 'SPRT_ADMIN',
+      userId: 'testADM',
+      details: this.tasks
+    };
+    this.model = JSON.stringify(this.data);
   }
 
 }

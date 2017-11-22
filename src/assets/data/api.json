@@ -56,3 +56,96 @@
     "userRole": "SPRT_ADMIN",
     "userId": "testADM"
 }
+
+{
+    "userRole": "SPRT_ADMIN",
+    "userId": "testADM",
+    "details": [
+        {
+            "origin": "SCL",
+            "destination": "BOG",
+            "carrier": "LA"
+        },
+        {
+            "origin": "EZE",
+            "destination": "BOG",
+            "carrier": "LA"
+        },
+        {
+            "origin": "EZE",
+            "destination": "SCL",
+            "carrier": "LA"
+        },
+        {
+            "origin": "EZE",
+            "destination": "CSS",
+            "carrier": "LA"
+        },
+        {
+            "origin": "CSS",
+            "destination": "SCL",
+            "carrier": "LA"
+        },
+        {
+            "origin": "CSS",
+            "destination": "EZE",
+            "carrier": "LA"
+        }
+    ]
+}
+
+
+{
+    "userRole": "SPRT_ADMIN",
+    "userId": "testADM",
+    "details": [
+        {
+            "origin": "VE",
+            "destination": "CL"
+        },
+        {
+            "origin": "VE",
+            "destination": "CO"
+        },
+        {
+            "origin": "VE",
+            "destination": "ES"
+        },
+        {
+            "origin": "CL",
+            "destination": "VE"
+        },
+        {
+            "origin": "CL",
+            "destination": "CO"
+        },
+        {
+            "origin": "CL",
+            "destination": "ES"
+        },
+        {
+            "origin": "CO",
+            "destination": "VE"
+        },
+        {
+            "origin": "CO",
+            "destination": "CL"
+        },
+        {
+            "origin": "CO",
+            "destination": "ES"
+        },
+        {
+            "origin": "ES",
+            "destination": "VE"
+        },
+        {
+            "origin": "ES",
+            "destination": "CL"
+        },
+        {
+            "origin": "ES",
+            "destination": "CO"
+        }
+    ]
+}

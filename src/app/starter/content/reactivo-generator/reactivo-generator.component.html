@@ -13,43 +13,64 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Generar Reactivo {{owner}}</h3>
                 </div>
-                <div class="form">
+                <form class="box-body" role="form" (ngSubmit)="getReport()" #reportForm="ngForm">
                     <div class="box-body">
                         <div class="row">
+                            <div class="hidden-xs col-md-4">
+                                <label>ORIGEN</label>
+                            </div>
+                            <div class="hidden-xs col-md-4">
+                                <label>DESTINO</label>
+                            </div>
+                            <div class="hidden-xs col-md-3">
+                            </div>
+                            <div class="hidden-xs col-md-1">
+
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-xs-4 col-md-4">
-                                <input type="text" class="form-control" placeholder="Origen">
+                                <input type="text" class="form-control" [(ngModel)]="newTask.origin" 
+                                name="origin" #origin="ngModel" placeholder='Origen' required
+                                minlength="2">
                             </div>
                             <div class="form-group col-xs-4 col-md-4">
-                                <input type="text" class="form-control" placeholder="Destino">
+                                <input type="text" class="form-control" [(ngModel)]="newTask.destination"
+                                name='destination'  #origin="ngModel" placeholder='Destino' required
+                                minlength="2">
                             </div>
                             <div class="col-xs-1 col-md-1">
-                                <button type="button" class="btn btn-success" (submit)="getReport()">
+                                <button type="button" class="btn btn-success" (click)="addTask()">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="row" *ngIf="true">
+                        <div class="row" *ngFor="let task of tasks">
                             <div class="form-group col-xs-4 col-md-4">
-                                <input type="text" class="form-control" value="Origen: {{origen}}" (blur)="editTask()">
+                                <input type="text" class="form-control" (blur)="updateTask(tasks.indexOf(task))" 
+                                [(ngModel)]="task.origin" [ngModelOptions]="{standalone: true}" required
+                                minlength="2" maxlength="2">
                             </div>
                             <div class="form-group col-xs-4 col-md-4">
-                                <input type="text" class="form-control" value="Destino: {{destino}}" (blur)="editTask()">
+                                <input type="text" class="form-control" (blur)="updateTask(tasks.indexOf(task))"
+                                [(ngModel)]="task.destination" [ngModelOptions]="{standalone: true}" required
+                                minlength="2" maxlength="2">
                             </div>
                             <div class="form-group col-xs-1 col-md-1">
-                                <button type="button" class="btn btn-danger" (click)="delTask()">
+                                <button type="button" class="btn btn-danger" (click)="delTask(tasks.indexOf(task))">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-success btn-block" (submit)="getReport()">
-                            <i class="fa fa-send"></i>
-                            <span>Generar</span>
+                    <div class="box-footer col-md-8">
+                        <button type="submit" class="btn btn-success btn-block">
+                            <i class="fa fa-send"></i> <span>Generar</span>
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+    {{ model }}
 </section>
