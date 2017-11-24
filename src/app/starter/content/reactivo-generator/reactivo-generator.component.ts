@@ -8,13 +8,13 @@ import { TaskReactivo } from './../../../classes/task-reactivo';
 })
 export class ReactivoGeneratorComponent implements OnInit {
   // Array newTask: array auxiliar para cargar un item a la solicitud de reporte ODC
-  private newTask: TaskReactivo = new TaskReactivo();
+  newTask: TaskReactivo = new TaskReactivo();
   // Array tasks: contiene todas las solicitudes que se realizarán a la plataforma
-  private tasks: Array<TaskReactivo> = [];
-  private data: Object;
+  tasks: Array<TaskReactivo> = [];
+  data: Object;
   // variables auxiliares
-  private origin: Array<string>;
-  private destination: Array<string>;
+  origin: Array<string>;
+  destination: Array<string>;
   submitted = false;
   model: any;
 
@@ -25,7 +25,7 @@ export class ReactivoGeneratorComponent implements OnInit {
   }
 
   // Método addTask(): agrega al array tasks las nuevas solicitudes
-  private addTask(): void {
+  addTask(): void {
 
     // const trimArray = array => array.map(string => string.trim())
     this.origin = this.newTask.origin.toUpperCase().split(',')
@@ -51,7 +51,7 @@ export class ReactivoGeneratorComponent implements OnInit {
     this.newTask = new TaskReactivo();
   }
 
-  private removeDuplicates(array: Array<TaskReactivo>) {
+  removeDuplicates(array: Array<TaskReactivo>) {
     return array = array.reduce((past, actual) => {
       const key = [actual.origin, actual.destination].join('|');
       if (past.temp.indexOf(key) === -1) {
@@ -63,7 +63,7 @@ export class ReactivoGeneratorComponent implements OnInit {
       { temp: [], out: [] }).out;
   }
 
-  private updateTask(id: number) {
+  updateTask(id: number) {
 
     this.tasks[id] = ({
       origin: this.tasks[id].origin.toUpperCase(),
@@ -74,14 +74,14 @@ export class ReactivoGeneratorComponent implements OnInit {
 
   }
 
-  private delTask(id: number) {
+  delTask(id: number) {
 
     this.tasks.splice(id, 1);
     console.log(this.tasks);
 
   }
 
-  private getReport() {
+  getReport() {
 
     this.submitted = true;
     this.data = {
