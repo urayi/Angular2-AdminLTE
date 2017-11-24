@@ -1,213 +1,198 @@
 {
-    "otro": [
-        {
-            "origin": "sss",
-            "destination": "aaa",
-            "carrier": "ww"
-        },
-        {
-            "origin": "ddd",
-            "destination": "www",
-            "carrier": "zz"
-        }
-    ]
-    "details": [
-        {
-            "carrier": "LA",
-            "origin": "SCL",
-            "destination": "JFK"
-        },
-        {
-            "carrier": "LA",
-            "origin": "BOG",
-            "destination": "SCL"
-        },
-        {
-            "carrier": "LA",
-            "origin": "BOG",
-            "destination": "JFK"
-        },
-        {
-            "carrier": "LA",
-            "origin": "COR",
-            "destination": "SCL"
-        },
-        {
-            "carrier": "LA",
-            "origin": "COR",
-            "destination": "JFK"
-        },
-        {
-            "carrier": "AA",
-            "origin": "VRE",
-            "destination": "MIA"
-        },
-        {
-            "carrier": "AA",
-            "origin": "EZE",
-            "destination": "MIA"
-        },
-        {
-            "carrier": "LA",
-            "origin": "MAD",
-            "destination": "SCL"
-        }
-    ],
-    "userRole": "SPRT_ADMIN",
-    "userId": "testADM"
-}
-
-{
-    "userRole": "SPRT_ADMIN",
-    "userId": "testADM",
-    "details": [
-        {
-            "origin": "SCL",
-            "destination": "BOG",
-            "carrier": "LA"
-        },
-        {
-            "origin": "EZE",
-            "destination": "BOG",
-            "carrier": "LA"
-        },
-        {
-            "origin": "EZE",
-            "destination": "SCL",
-            "carrier": "LA"
-        },
-        {
-            "origin": "EZE",
-            "destination": "CSS",
-            "carrier": "LA"
-        },
-        {
-            "origin": "CSS",
-            "destination": "SCL",
-            "carrier": "LA"
-        },
-        {
-            "origin": "CSS",
-            "destination": "EZE",
-            "carrier": "LA"
-        }
-    ]
-},
-
-
-{
-    "userRole": "SPRT_ADMIN",
-    "userId": "testADM",
-    "details": [
-        {
-            "origin": "VE",
-            "destination": "CL"
-        },
-        {
-            "origin": "VE",
-            "destination": "CO"
-        },
-        {
-            "origin": "VE",
-            "destination": "ES"
-        },
-        {
-            "origin": "CL",
-            "destination": "VE"
-        },
-        {
-            "origin": "CL",
-            "destination": "CO"
-        },
-        {
-            "origin": "CL",
-            "destination": "ES"
-        },
-        {
-            "origin": "CO",
-            "destination": "VE"
-        },
-        {
-            "origin": "CO",
-            "destination": "CL"
-        },
-        {
-            "origin": "CO",
-            "destination": "ES"
-        },
-        {
-            "origin": "ES",
-            "destination": "VE"
-        },
-        {
-            "origin": "ES",
-            "destination": "CL"
-        },
-        {
-            "origin": "ES",
-            "destination": "CO"
-        }
-    ]
-},
-
-
-
-{
-    "userRole": "SPRT_ADMIN",
-    "userId": "testADM",
-    "details": [
-        {
-            "origin": "SCL",
-            "destination": "BOG",
-            "carrier": "LA"
-        },
-        {
-            "origin": "SCL",
-            "destination": "EFT",
-            "carrier": "LA"
-        },
-        {
-            "origin": "SCL",
-            "destination": "VEF",
-            "carrier": "LA"
-        },
-        {
-            "origin": "VEF",
-            "destination": "EFT",
-            "carrier": "LA"
-        },
-        {
-            "origin": "VEF",
-            "destination": "CDE",
-            "carrier": "LA"
-        },
-        {
-            "origin": "VEF",
-            "destination": "SBG",
-            "carrier": "LA"
-        },
-        {
-            "origin": "GTE",
-            "destination": "EFT",
-            "carrier": "LA"
-        },
-        {
-            "origin": "GTE",
-            "destination": "CDE",
-            "carrier": "LA"
-        },
-        {
-            "origin": "CSS",
-            "destination": "EZE",
-            "carrier": "LA"
-        },
-        {
-            "origin": "CSS",
-            "destination": "EZE",
-            "carrier": "JJ"
-        }
-    ]
-} {
-    "newTask": {},
-    "dataTasks": {}
+    {
+        "details": [
+            {
+                "carrier": "LA",
+                "origin": "SCL",
+                "destination": "JFK"
+            },
+            {
+                "carrier": "LA",
+                "origin": "BOG",
+                "destination": "SCL"
+            },
+            {
+                "carrier": "LA",
+                "origin": "BOG",
+                "destination": "JFK"
+            },
+            {
+                "carrier": "LA",
+                "origin": "COR",
+                "destination": "SCL"
+            },
+            {
+                "carrier": "LA",
+                "origin": "COR",
+                "destination": "JFK"
+            },
+            {
+                "carrier": "AA",
+                "origin": "VRE",
+                "destination": "MIA"
+            },
+            {
+                "carrier": "AA",
+                "origin": "EZE",
+                "destination": "MIA"
+            },
+            {
+                "carrier": "LA",
+                "origin": "MAD",
+                "destination": "SCL"
+            }
+        ],
+        "userRole": "SPRT_ADMIN",
+        "userId": "testADM"
+    },
+    {
+        "userRole": "SPRT_ADMIN",
+        "userId": "testADM",
+        "details": [
+            {
+                "origin": "SCL",
+                "destination": "BOG",
+                "carrier": "LA"
+            },
+            {
+                "origin": "EZE",
+                "destination": "BOG",
+                "carrier": "LA"
+            },
+            {
+                "origin": "EZE",
+                "destination": "SCL",
+                "carrier": "LA"
+            },
+            {
+                "origin": "EZE",
+                "destination": "CSS",
+                "carrier": "LA"
+            },
+            {
+                "origin": "CSS",
+                "destination": "SCL",
+                "carrier": "LA"
+            },
+            {
+                "origin": "CSS",
+                "destination": "EZE",
+                "carrier": "LA"
+            }
+        ]
+    },
+    {
+        "userRole": "SPRT_ADMIN",
+        "userId": "testADM",
+        "details": [
+            {
+                "origin": "VE",
+                "destination": "CL"
+            },
+            {
+                "origin": "VE",
+                "destination": "CO"
+            },
+            {
+                "origin": "VE",
+                "destination": "ES"
+            },
+            {
+                "origin": "CL",
+                "destination": "VE"
+            },
+            {
+                "origin": "CL",
+                "destination": "CO"
+            },
+            {
+                "origin": "CL",
+                "destination": "ES"
+            },
+            {
+                "origin": "CO",
+                "destination": "VE"
+            },
+            {
+                "origin": "CO",
+                "destination": "CL"
+            },
+            {
+                "origin": "CO",
+                "destination": "ES"
+            },
+            {
+                "origin": "ES",
+                "destination": "VE"
+            },
+            {
+                "origin": "ES",
+                "destination": "CL"
+            },
+            {
+                "origin": "ES",
+                "destination": "CO"
+            }
+        ]
+    },
+    {
+        "userRole": "SPRT_ADMIN",
+        "userId": "testADM",
+        "details": [
+            {
+                "origin": "SCL",
+                "destination": "BOG",
+                "carrier": "LA"
+            },
+            {
+                "origin": "SCL",
+                "destination": "EFT",
+                "carrier": "LA"
+            },
+            {
+                "origin": "SCL",
+                "destination": "VEF",
+                "carrier": "LA"
+            },
+            {
+                "origin": "VEF",
+                "destination": "EFT",
+                "carrier": "LA"
+            },
+            {
+                "origin": "VEF",
+                "destination": "CDE",
+                "carrier": "LA"
+            },
+            {
+                "origin": "VEF",
+                "destination": "SBG",
+                "carrier": "LA"
+            },
+            {
+                "origin": "GTE",
+                "destination": "EFT",
+                "carrier": "LA"
+            },
+            {
+                "origin": "GTE",
+                "destination": "CDE",
+                "carrier": "LA"
+            },
+            {
+                "origin": "CSS",
+                "destination": "EZE",
+                "carrier": "LA"
+            },
+            {
+                "origin": "CSS",
+                "destination": "EZE",
+                "carrier": "JJ"
+            }
+        ]
+    },
+    {
+        "newTask": {},
+        "dataTasks": {}
+    }
 }
