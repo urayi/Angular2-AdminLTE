@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormArray, NgForm, NG_VALIDATORS, Validators, ValidationErrors } from '@angular/forms';
 import { Task } from './../../../classes/task';
 
 @Component({
@@ -7,15 +8,16 @@ import { Task } from './../../../classes/task';
   styleUrls: ['./report-generator.component.css']
 })
 export class ReportGeneratorComponent implements OnInit {
+  control: FormControl = new FormControl('value');
   // Array newTask: array auxiliar para cargar un item a la solicitud de reporte ODC
-  private newTask: Task = new Task();
+  newTask: Task = new Task();
   // Array tasks: contiene todas las solicitudes que se realizarán a la plataforma
-  private tasks: Array<Task> = [];
-  private data: Object;
+  tasks: Array<Task> = [];
+  data: Object;
   // variables auxiliares
-  private origin: Array<string>;
-  private destination: Array<string>;
-  private carrier: Array<string> = [];
+  origin: Array<string>;
+  destination: Array<string>;
+  carrier: Array<string> = [];
   submitted = false;
   model: any;
 
@@ -26,9 +28,9 @@ export class ReportGeneratorComponent implements OnInit {
   }
 
   // Método addTask(): agrega al array tasks las nuevas solicitudes
-  private addTask(): void {
+  addTask() {
 
-    // const trimArray = array => array.map(string => string.trim())
+    // Adaptación de los datos de entrada a mayusculas y parseo de datos.
     this.origin = this.newTask.origin.toUpperCase().split(',')
       .map(string => string.trim())
       .filter((item, index, array) => (item !== ''))
@@ -41,7 +43,7 @@ export class ReportGeneratorComponent implements OnInit {
       .map(string => string.trim())
       .filter((item, index, array) => (item !== ''))
       .filter((item, index, array) => (array.indexOf(item) === index));
-
+    // Agrega los nuevos "task" al array "tasks"
     for (const i of this.carrier) {
       // Acá el validador del dato
       for (const j of this.origin) {
@@ -54,14 +56,16 @@ export class ReportGeneratorComponent implements OnInit {
         }
       }
     }
-    // eliminación de tareas duplicadas
+    // Eliminación de "task" duplicadas
     this.tasks = this.removeDuplicates(this.tasks);
-    console.log('expandido');
     console.log(this.tasks);
     this.newTask = new Task();
+    return this.tasks;
+
   }
 
   removeDuplicates(array: Array<Task>) {
+
     return array = array.reduce((past, actual) => {
       const key = [actual.origin, actual.destination, actual.carrier].join('|');
       if (past.temp.indexOf(key) === -1) {
@@ -71,9 +75,11 @@ export class ReportGeneratorComponent implements OnInit {
       return past;
     },
       { temp: [], out: [] }).out;
+
   }
 
-  private updateTask(id: number) {
+  // Método para cambiar o corregir un dato en una tarea específica
+  updateTask(id: number) {
 
     this.tasks[id] = ({
       origin: this.tasks[id].origin.toUpperCase(),
@@ -85,14 +91,16 @@ export class ReportGeneratorComponent implements OnInit {
 
   }
 
-  private delTask(id: number) {
+  // Método para eliminar una "task" específica
+  delTask(id: number, form: NgForm) {
 
     this.tasks.splice(id, 1);
     console.log(this.tasks);
 
   }
 
-  private getReport() {
+  // Método para solicitar el reporte al servidor
+  getReport() {
 
     this.submitted = true;
     this.data = {
@@ -100,7 +108,8 @@ export class ReportGeneratorComponent implements OnInit {
       userId: 'testADM',
       details: this.tasks
     };
-    this.model = JSON.stringify(this.data);
+    this.model = this.data;
+
   }
 
 }

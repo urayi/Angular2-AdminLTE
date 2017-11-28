@@ -46,7 +46,6 @@ export class ReactivoGeneratorComponent implements OnInit {
     }
     // eliminación de tareas duplicadas
     this.tasks = this.removeDuplicates(this.tasks);
-    console.log('expandido');
     console.log(this.tasks);
     this.newTask = new TaskReactivo();
   }
@@ -89,7 +88,8 @@ export class ReactivoGeneratorComponent implements OnInit {
       userId: 'testADM',
       details: this.tasks
     };
-    this.model = JSON.stringify(this.data);
+    this.model = this.data;
+
   }
 
 }

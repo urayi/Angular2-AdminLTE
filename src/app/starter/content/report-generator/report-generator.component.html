@@ -13,76 +13,95 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Generar Reporte</h3>
                 </div>
-                <form class="box-body" role="form" (ngSubmit)="getReport()" #reportForm="ngForm">
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="hidden-xs col-md-4">
-                                <label>ORIGEN</label>
-                            </div>
-                            <div class="hidden-xs col-md-4">
-                                <label>DESTINO</label>
-                            </div>
-                            <div class="hidden-xs col-md-3">
-                                <label>CARRIER</label>
-                            </div>
-                            <div class="hidden-xs col-md-1">
+                <div class="box-body">
+                    <form class="box-body jumbotron" role="form" (ngSubmit)="addTask()" #newTaskForm="ngForm" novalidate>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-3 col-md-4">
+                                    <label>ORIGEN</label>
+                                </div>
+                                <div class="col-xs-3 col-md-4">
+                                    <label>DESTINO</label>
+                                </div>
+                                <div class="col-xs-3 col-md-3">
+                                    <label>CARRIER</label>
+                                </div>
+                                <div class="col-xs-3 col-md-1">
 
+                                </div>
+                            </div>
+                            <div class="row" [ngModelGroup]="newTask">
+                                <div class="form-group col-xs-3 col-md-4">
+                                    <input type="text" class="form-control" [(ngModel)]="newTask.origin" name="origin" placeholder='Origen' required minlength="3"
+                                        autofocus dirty ngModel/>
+                                    <span class="help-block" *ngIf="newTask.origin === undefined">Error:</span>
+                                </div>
+                                <div class="form-group col-xs-3 col-md-4">
+                                    <input type="text" class="form-control" [(ngModel)]="newTask.destination" name='destination' placeholder='Destino' required
+                                        minlength="3" dirty ngModel/>
+                                    <span class="help-block" *ngIf="true">Error:</span>
+                                </div>
+                                <div class="form-group col-xs-3 col-md-3">
+                                    <input type="text" class="form-control" [(ngModel)]="newTask.carrier" name='carrier' placeholder='Carrier' required minlength="2"
+                                        dirty ngModel/>
+                                    <span class="help-block" *ngIf="true">Error:</span>
+                                </div>
+                                <div class="form-group col-xs-1 col-md-1">
+                                    <button type="submit" class="btn btn-success" [disabled]="newTaskForm.invalid || newTaskForm.pending">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="row" ngModelGroup="newTask">
-                            <div class="form-group col-xs-6 col-md-4">
-                                <input type="text" class="form-control" [(ngModel)]="newTask.origin" 
-                                name="origin" placeholder='Origen' required
-                                minlength="3">
-                            </div>
-                            <div class="form-group col-xs-6 col-md-4">
-                                <input type="text" class="form-control" [(ngModel)]="newTask.destination"
-                                name='destination' placeholder='Destino' required
-                                minlength="3">
-                            </div>
-                            <div class="form-group col-xs-6 col-md-3">
-                                <input type="text" class="form-control" [(ngModel)]="newTask.carrier"
-                                name='carrier' placeholder='Carrier' required
-                                minlength="2">
-                            </div>
-                            <div class="form-group col-xs-6 col-md-1">
-                                <button type="button" class="btn btn-success" (click)="addTask()">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row" *ngFor="let task of tasks" ngModelGroup="dataTasks">
-                            <div class="form-group col-xs-6 col-md-4">
-                                <input type="text" class="form-control" (blur)="updateTask(tasks.indexOf(task))" 
-                                [(ngModel)]="task.origin" [ngModelOptions]="{standalone: true}" required
-                                minlength="3" maxlength="3" (keyup.enter)="updateTask(tasks.indexOf(task))">
-                            </div>
-                            <div class="form-group col-xs-6 col-md-4" required>
-                                <input type="text" class="form-control" (blur)="updateTask(tasks.indexOf(task))"
-                                [(ngModel)]="task.destination" [ngModelOptions]="{standalone: true}" required
-                                minlength="3" maxlength="3" (keyup.enter)="updateTask(tasks.indexOf(task))">
-                            </div>
-                            <div class="form-group col-xs-6 col-md-3">
-                                <input type="text" class="form-control" (blur)="updateTask(tasks.indexOf(task))"
-                                [(ngModel)]="task.carrier" [ngModelOptions]="{standalone: true}" required
-                                minlength="2" maxlength="2" (keyup.enter)="updateTask(tasks.indexOf(task))">
-                            </div>
-                            <div class="form-group col-xs-6 col-md-1">
-                                <button type="button" class="btn btn-danger" (click)="delTask(tasks.indexOf(task))">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
+                    </form>
+                    <div class="callout callout-danger" *ngIf="reportForm.invalid">
+                        <h4><i class="icon fa fa-ban"></i> Error</h4>
+                        <p>Corrige el error</p>
                     </div>
-                    <div class="box-footer box-footer col-md-11">
-                        <button type="submit" class="btn btn-success btn-block">
-                            <i class="fa fa-send"></i> <span>Generar</span>
-                        </button>
-                    </div>
-                </form>
+                    <form class="box-body" role="form" #reportForm="ngForm" novalidate>
+                        <div class="box-body" *ngFor="let task of tasks; let i = index;">
+                            <div ngModelGroup="reportTasks[{{i}}]">
+                                <div class="row">
+                                    <div class="form-group col-xs-3 col-md-4">
+                                        <input type="text" class="form-control" (blur)="updateTask(tasks.indexOf(task))" [(ngModel)]="task.origin" name="origin"
+                                            required pristine dirty maxlength="3" pattern="[A-Za-z]{3}" ngModel/>
+                                        <span class="help-block" *ngIf="true">Error:</span>
+                                    </div>
+                                    <div class="form-group col-xs-3 col-md-4">
+                                        <input type="text" class="form-control" (blur)="updateTask(tasks.indexOf(task))" [(ngModel)]="task.destination" name="destination"
+                                            required pristine dirty maxlength="3" pattern="[A-Za-z]{3}" ngModel/>
+                                        <span class="help-block" *ngIf="true">Error:</span>
+                                    </div>
+                                    <div class="form-group col-xs-3 col-md-3">
+                                        <input type="text" class="form-control" (blur)="updateTask(tasks.indexOf(task))" [(ngModel)]="task.carrier" name="carrier"
+                                            required pristine dirty maxlength="2" pattern="[A-Za-z]{2}" ngModel/>
+                                        <span class="help-block" *ngIf="true">Error:</span>
+                                    </div>
+                                    <div class="form-group col-xs-1 col-md-1">
+                                        <button type="button" class="btn btn-danger" (click)="delTask(tasks.indexOf(task))">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer col-xs-9 col-md-11">
+                            <button type="button" (click)="getReport()" class="btn btn-success btn-block" [disabled]="reportForm.invalid || reportForm.pending">
+                                <i class="fa fa-send"></i>
+                                <span>Generar</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    {{ model }}
-    {{ reportForm.value | json }}
+    <pre> 
+        <p>"newTaskForm" valid ? {{ newTaskForm.valid }} </p>
+        <p> "reportForm" valid ? {{ reportForm.valid }} </p>
+        <p>"newTaskForm" valid ? {{ reportForm.invalid || reportForm.pending }}</p>
+        <div class="col-md-4">{{ newTaskForm.value | json }}</div>
+        <div class="col-md-4">{{ model | json }}</div>
+        <div class="col-md-4">{{ reportForm.value | json }}</div>
+    </pre>
 </section>
